@@ -1,0 +1,15 @@
+# --- Java ---
+*.class
+bin/
+target/
+*.jar
+*.war
+*.ear
+
+# --- VS Code ---
+.vscode/
+*.code-workspace
+
+# --- Archivos de Sistema ---
+.DS_Store
+Thumbs.db
