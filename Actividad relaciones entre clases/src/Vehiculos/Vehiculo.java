@@ -1,6 +1,6 @@
 package Vehiculos;
 
-public class Vehiculo {
+abstract public class Vehiculo {
     static String placa;
     
     public Vehiculo(String placa){

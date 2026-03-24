@@ -33,21 +33,21 @@ public class Peaje {
         this.departamento = departamento;
     }
 
-    public void añadirVehiculo(Vehiculo vehículo){
-        vehiculos.add(vehículo);
+    public void añadirVehiculo(Vehiculo vehiculo, List<Vehiculo> vehiculos){
+        vehiculos.add(vehiculo);
     }
 
-    public int calcularPeaje(Vehiculo vehículo){
-        if (vehículo instanceof Carro) { 
+    public int calcularPeaje(Vehiculo vehiculo){
+        if (vehiculo instanceof Carro) { 
             totalCarros++; 
             totalPeaje += Carro.valorPeaje;
 
             return Carro.valorPeaje; 
 
-        } else if (vehículo instanceof Camion) { 
+        } else if (vehiculo instanceof Camion) { 
 
             totalCamiones++; 
-        Camion camion = (Camion) vehículo;
+        Camion camion = (Camion) vehiculo;
 
 
         totalPeaje += camion.numeroEjes * camion.valorPeajeEje;
@@ -58,11 +58,13 @@ public class Peaje {
 
     public void imprimir(){
 
+        System.out.println("-------------------------------------");
         System.out.println("Nombre: " + nombre);
         System.out.println("Departamento: " + departamento);
         System.out.println("Total del peaje: " + totalPeaje);
         System.out.println("Total de carros: " + totalCarros);
         System.out.println("TotalCarros: " + totalCamiones);
+        System.out.println("-------------------------------------");
     }
     
 }
