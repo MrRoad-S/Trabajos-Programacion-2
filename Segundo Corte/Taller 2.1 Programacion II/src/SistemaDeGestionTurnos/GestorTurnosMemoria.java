@@ -1,5 +1,6 @@
 package SistemaDeGestionTurnos;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -18,10 +19,11 @@ public class GestorTurnosMemoria implements GestorTurnos{
         turnosAtendidos=new ArrayList<>();
     }
     @Override
-    public void agregarTurno(Cliente cliente) {
+    public void agregarTurno(Cliente cliente, LocalDate fecha) {
         idTurno++;
-        Turno turno=new Turno(0, cliente);
+        Turno turno=new Turno(0, cliente, fecha);
         colaTurnos.add(turno);
+        turno.imprimir();
     }
 
     @Override
@@ -29,6 +31,7 @@ public class GestorTurnosMemoria implements GestorTurnos{
         Turno turno=colaTurnos.poll();
         turno.setEmpleado(empleado);
         turnosAtendidos.add(turno);
+        
     }
 
     @Override
