@@ -13,4 +13,5 @@ public class Empleado extends Persona{
         super.imprimir();
         System.out.println("Puesto: " + puesto);
     }
+    //poyo
 }

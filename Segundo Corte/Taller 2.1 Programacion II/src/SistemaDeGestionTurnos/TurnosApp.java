@@ -9,6 +9,7 @@ public class TurnosApp {
 
     private GestorTurnos gestorTurnos;
     Scanner sc=new Scanner(System.in);
+    
     Empleado empleado1=new Empleado("Kirby", 9022, 21, "Supervisor");
     Empleado empleado2=new Empleado("Sonic", 1991, 15, "Cajero");
 
