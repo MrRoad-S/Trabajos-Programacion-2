@@ -56,6 +56,7 @@ public class TurnosApp {
                     System.out.println("\n--------------Empleados---------------");
                     empleados.add(empleado1);
                     empleados.add(empleado2);
+
                     agregarEmpleado();
                     break;
                 case 3:
@@ -89,6 +90,7 @@ public class TurnosApp {
         }while(opcion != 0);    
     }
     public void agregarEmpleado(){
+
         for(Empleado empleado: empleados){
             empleado.imprimir();
         }
