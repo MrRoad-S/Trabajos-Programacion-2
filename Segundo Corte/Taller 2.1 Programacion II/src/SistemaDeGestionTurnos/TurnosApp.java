@@ -1,6 +1,8 @@
 package SistemaDeGestionTurnos;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 import Interfaces.GestorTurnos;
@@ -8,17 +10,20 @@ import Interfaces.GestorTurnos;
 public class TurnosApp {
 
     private GestorTurnos gestorTurnos;
+    private List<Empleado> empleados;
+    private List<Cliente> clientes;
+
     Scanner sc=new Scanner(System.in);
+    Cliente cliente1=new Cliente("Santiago Camino Muñoz", 1108639397, 21);
+    Cliente cliente2=new Cliente("Natalia Erazo Lozano", 1209089, 18);
     
     Empleado empleado1=new Empleado("Kirby", 9022, 21, "Supervisor");
     Empleado empleado2=new Empleado("Sonic", 1991, 15, "Cajero");
 
-    Cliente cliente1=new Cliente("Santiago Camino Muñoz", 1108, 22);
-    Cliente cliente2=new Cliente("Natalia Erazo Lozano", 1109, 18);
-    Cliente cliente3=new Cliente("MetaKnight", 0, 0);
-
     public TurnosApp(GestorTurnos gestorTurnos){
         this.gestorTurnos=gestorTurnos;
+        this.empleados =new ArrayList<>();
+        this.clientes =new ArrayList<>();
     }
     
     public void start(Scanner sc){
@@ -41,26 +46,20 @@ public class TurnosApp {
             opcion = sc.nextInt();
             switch (opcion) {
                 case 1:
-                    cliente1.setGenero("Hombre");
-                    cliente2.setGenero("Mujer");
-                    cliente3.setGenero("Hombre");
                     System.out.println("\n---------------Clientes---------------");
-                    cliente1.imprimir();
-                    cliente2.imprimir();
-                    cliente3.imprimir();
+                    clientes.add(cliente1);
+                    clientes.add(cliente2);
+                    agregarCliente();
                     
                     break;
                 case 2:
-                    empleado1.setGenero("Hombre");
-                    empleado2.setGenero("Hombre");
                     System.out.println("\n--------------Empleados---------------");
-                    empleado1.imprimir();
-                    empleado2.imprimir();
+                    empleados.add(empleado1);
+                    empleados.add(empleado2);
+                    agregarEmpleado();
                     break;
                 case 3:
-                    GestorTurnosMemoria GTM=new GestorTurnosMemoria();
                     LocalDate fecha = LocalDate.now();
-                    GTM.agregarTurno(cliente1, fecha);
                     System.out.println("Turno asignado");
 
                     break;
@@ -73,6 +72,9 @@ public class TurnosApp {
                 case 6:
                     
                     break;
+                case 0:
+                    System.out.println("Bye, bye");
+                    break;
                 case 99:
                     System.out.println("-------------Kirby: POYO--------------");
                     System.out.println("""
@@ -84,8 +86,18 @@ public class TurnosApp {
                 default: System.out.println("Opcion no valida");
                     break;
             }
-        }while(opcion != 0);
+        }while(opcion != 0);    
+    }
+    public void agregarEmpleado(){
+        for(Empleado empleado: empleados){
+            empleado.imprimir();
+        }
+    }
 
+    public void agregarCliente(){
         
+        for(Cliente cliente: clientes){
+            cliente.imprimir();
+        }
     }
 }
