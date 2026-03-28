@@ -29,10 +29,14 @@ public class TurnosApp {
     public void start(Scanner sc){
         //Aqui esta toda la logica para mostrar el menu e interactuar con el usuario
         int opcion = -1;
+        clientes.add(cliente1);
+        clientes.add(cliente2);
+        empleados.add(empleado1);
+        empleados.add(empleado2);
         do{
             System.out.print("""
             **************************************
-                 SISTEMA DE GESTOR DE TURNOS
+            (^-^)/SISTEMA DE GESTOR DE TURNOS
             **************************************
             1. Registrar Cliente
             2. Registrar Empleado
@@ -47,16 +51,11 @@ public class TurnosApp {
             switch (opcion) {
                 case 1:
                     System.out.println("\n---------------Clientes---------------");
-                    clientes.add(cliente1);
-                    clientes.add(cliente2);
                     agregarCliente();
                     
                     break;
                 case 2:
                     System.out.println("\n--------------Empleados---------------");
-                    empleados.add(empleado1);
-                    empleados.add(empleado2);
-
                     agregarEmpleado();
                     break;
                 case 3:
