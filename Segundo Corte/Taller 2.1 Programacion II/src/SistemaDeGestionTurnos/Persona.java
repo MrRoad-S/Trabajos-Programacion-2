@@ -4,7 +4,6 @@ public class Persona {
     private String nombre;
     private int identificacion;
     private int edad;
-    private String genero;
 
     public Persona(String nombre, int identificacion, int edad){
         this.nombre=nombre;
@@ -36,20 +35,11 @@ public class Persona {
         this.edad = edad;
     }
 
-    public String getGenero() {
-        return genero;
-    }
-
-    public void setGenero(String genero) {
-        this.genero = genero;
-    }
     public void imprimir(){
-        System.out.println("______________________________________");
-
+        System.out.println("..........................................");
         System.out.println("Nombre: " + nombre);
         System.out.println("Identificacion: "+ identificacion);
         System.out.println("Edad: "+ edad);
-        System.out.println("Genero: " + genero);
     }
     
 }

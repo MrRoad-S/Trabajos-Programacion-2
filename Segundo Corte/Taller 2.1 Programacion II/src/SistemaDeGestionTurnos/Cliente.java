@@ -9,6 +9,7 @@ public class Cliente extends Persona{
     @Override
     public void imprimir(){
         super.imprimir();
+        System.out.println("..........................................");
     }
     
 }

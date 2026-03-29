@@ -12,6 +12,7 @@ public class Empleado extends Persona{
     public void imprimir(){
         super.imprimir();
         System.out.println("Puesto: " + puesto);
+        System.out.println("..........................................");
     }
     
 }

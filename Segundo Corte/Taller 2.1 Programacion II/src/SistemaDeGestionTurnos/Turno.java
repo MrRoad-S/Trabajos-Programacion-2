@@ -36,9 +36,20 @@ public class Turno {
     }
 
     public void imprimir(){
-        System.out.println("---------------Turno---------------");
-        System.out.println("Id: "+id);
-        System.out.println("Nombre: " + cliente);
-        System.out.println("Fecha: "+ fecha);
+        if(empleado == null){
+            System.out.println("..........................................");
+            System.out.println("Id turno: "+ id);
+            System.out.println("Nombre del cliente: " + cliente.getNombre());
+            System.out.println("Fecha: "+ fecha);
+            System.out.println("..........................................");
+        }else{
+            System.out.println("..........................................");
+            System.out.println("Id turno: "+ id);
+            System.out.println("Nombre del cliente: " + cliente.getNombre());
+            System.out.println("Fecha: "+ fecha);
+            System.out.println("Empleado asignado: "+ empleado.getNombre());
+            System.out.println("..........................................");
+        }
+       
     }
 }

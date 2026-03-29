@@ -20,30 +20,50 @@ public class GestorTurnosMemoria implements GestorTurnos{
     }
     @Override
     public void agregarTurno(Cliente cliente, LocalDate fecha) {
-        idTurno++;
-        Turno turno=new Turno(0, cliente, fecha);
+        Turno turno=new Turno(idTurno, cliente, fecha);
         colaTurnos.add(turno);
         turno.imprimir();
+        idTurno++;
+        
     }
 
     @Override
     public void atenderTurno(Empleado empleado) {
-        Turno turno=colaTurnos.poll();
-        turno.setEmpleado(empleado);
-        turnosAtendidos.add(turno);
+        if(colaTurnos.isEmpty()){
+            System.out.println("\nNo se puede asignar empleado. No hay turnos pendientes....\n");
+        }else{
+            Turno turno=colaTurnos.poll();
+            turno.setEmpleado(empleado);
+            turnosAtendidos.add(turno);
+            System.out.println("\n************* TURNO ATENDIDO *************");
+            turno.imprimir();  
+        }
+        
         
     }
 
     @Override
     public void mostrarTurnosPendientes() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'mostrarTurnosPendientes'");
+        if(colaTurnos.isEmpty()){
+            System.out.println("\nNo hay turnos pendientes...\n"); 
+        }else{
+            for (Turno turno : colaTurnos) {
+                turno.imprimir();
+            }
+        }
     }
 
     @Override
     public void mostrarTurnosAtendidos() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'mostrarTurnosAtendidos'");
+        if(turnosAtendidos.isEmpty()){
+            System.out.println("\nNo se han atendido ningun turno...\n");
+        }else{
+            for (Turno turno : turnosAtendidos){
+                turno.imprimir();
+            }
+        }
+    
     }
+    
     
 }
