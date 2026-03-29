@@ -1,6 +1,5 @@
 package SistemaDeGestionTurnos;
 
-import java.net.Socket;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
