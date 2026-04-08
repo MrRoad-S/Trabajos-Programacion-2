@@ -216,7 +216,7 @@ public class TurnosApp {
         int opcion;
         do {
             System.out.print("""
-                    *******************************************
+                    -------------------------------------------
                     ¿Desea agregar Cliente?
 
                     1.Si
