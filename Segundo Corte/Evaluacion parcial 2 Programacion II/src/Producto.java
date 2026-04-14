@@ -51,13 +51,19 @@ public class Producto {
         System.out.println("Tipo de producto: " + tipoProducto);
         System.out.println("Stock del producto: " + stock);
     }
-    public int añadirStock(){
-        stock++;
+    public int añadirStock(int cantidad){
+        stock= stock+cantidad;
         return stock;
     }
 
-    public int removerStock(){
-        stock--;
+    public int removerStock(int cantidad){
+        if((stock-cantidad)>=0){
+            stock=stock-cantidad;
+            System.out.println("\n¡Movimiento registrado!");
+        }
+        else{
+            System.out.println("Debe dijitar una cantidad que exista en stock");
+        }
         return stock;
     }
 
