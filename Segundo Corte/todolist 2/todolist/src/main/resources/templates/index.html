@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Inicio</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        kirbyGold: '#f6c445',
+                        kirbyCream: '#fff4c7',
+                        kirbyBlue: '#67c8ff',
+                        kirbyDarkBlue: '#2b8fd8',
+                        kirbyPink: '#ff92c2',
+                        kirbyBg: '#dff5ff'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="min-h-screen bg-gradient-to-b from-sky-200 via-cyan-100 to-yellow-100 text-slate-700 overflow-x-hidden">
+
+    <div th:replace="layouts/plantilla :: header"></div>
+
+    <main 
+        class="max-w-5xl mx-auto mt-10 rounded-[40px] border-[10px] border-yellow-300 bg-gradient-to-b from-sky-200 to-cyan-100 shadow-2xl relative overflow-hidden"
+    >
+
+        <!-- Fondo decorativo -->
+        <div class="absolute inset-0 opacity-20">
+            <div class="absolute w-96 h-96 bg-white rounded-full blur-3xl -top-20 -left-20"></div>
+            <div class="absolute w-72 h-72 bg-cyan-200 rounded-full blur-3xl bottom-0 right-0"></div>
+        </div>
+
+        <!-- Barra superior estilo Kirby -->
+        <div class="relative bg-gradient-to-r from-yellow-300 via-yellow-200 to-yellow-400 border-b-8 border-yellow-500 px-10 py-6 rounded-b-[35px] shadow-lg">
+
+            <div class="bg-yellow-50 border-4 border-yellow-300 rounded-full px-8 py-3 shadow-inner flex items-center justify-center">
+
+                <h2 class="text-5xl font-black tracking-wide text-yellow-700 drop-shadow-sm">
+                    Main Menu
+                </h2>
+
+            </div>
+
+        </div>
+
+        <!-- Contenido -->
+        <div class="relative px-10 py-14">
+
+            <!-- Caja principal -->
+            <div class="bg-gradient-to-r from-sky-500 to-blue-400 rounded-[35px] border-[6px] border-cyan-200 shadow-xl p-8 mb-10">
+
+                <h2 class="text-4xl font-black text-white drop-shadow-md mb-4">
+                    Bienvenido
+                </h2>
+
+                <p class="text-xl text-cyan-50 font-semibold">
+                    Esta es una aplicación de gestión de tareas.
+                </p>
+
+            </div>
+
+            <!-- Botones estilo Return to Dreamland -->
+            <ul class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+                <li>
+
+                    <a 
+                        th:href="@{/tareas}"
+                        class="group block bg-gradient-to-r from-lime-400 to-green-400 hover:scale-105 transition duration-300 rounded-[35px] border-[6px] border-lime-200 shadow-2xl px-10 py-8 relative overflow-hidden"
+                    >
+
+                        <div class="absolute inset-0 bg-white opacity-10 group-hover:opacity-20 transition"></div>
+
+                        <div class="relative flex items-center justify-between">
+
+                            <div>
+                                <span class="block text-4xl font-black text-white drop-shadow-md">
+                                    TAREAS
+                                </span>
+
+                                <span class="text-lime-50 font-bold text-lg">
+                                    Gestiona tus actividades
+                                </span>
+                            </div>
+
+                            <span class="text-6xl">
+                                ⭐
+                            </span>
+
+                        </div>
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a 
+                        th:href="@{/categorias}"
+                        class="group block bg-gradient-to-r from-pink-400 to-rose-400 hover:scale-105 transition duration-300 rounded-[35px] border-[6px] border-pink-200 shadow-2xl px-10 py-8 relative overflow-hidden"
+                    >
+
+                        <div class="absolute inset-0 bg-white opacity-10 group-hover:opacity-20 transition"></div>
+
+                        <div class="relative flex items-center justify-between">
+
+                            <div>
+                                <span class="block text-4xl font-black text-white drop-shadow-md">
+                                    CATEGORÍAS
+                                </span>
+
+                                <span class="text-pink-50 font-bold text-lg">
+                                    Organiza tus tareas
+                                </span>
+                            </div>
+
+                            <span class="text-6xl">
+                                🌈
+                            </span>
+
+                        </div>
+
+                    </a>
+
+                </li>
+
+            </ul>
+
+            <!-- Barra inferior decorativa -->
+            <div class="mt-12 flex justify-center">
+
+                <div class="bg-gradient-to-r from-yellow-300 to-yellow-400 border-4 border-yellow-200 rounded-full px-10 py-3 shadow-lg">
+
+                    <span class="text-yellow-800 text-xl font-black tracking-wide">
+                        ✨ Kirby Task World ✨
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <div th:replace="layouts/plantilla :: footer"></div>
+
+</body>
+</html>
