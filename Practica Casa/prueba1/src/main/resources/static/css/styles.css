@@ -1,0 +1,142 @@
+
+
+/* Fuente moderna y fondo neutro */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #383d3c;
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+}
+
+/* El contenedor del formulario */
+.container {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    
+}
+
+h1 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #666;
+    font-weight: 600;
+}
+
+input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box; /* Importante para que el padding no rompa el ancho */
+}
+
+button {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #2c3e50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+button:hover {
+    background-color: #34495e;
+}
+
+/* 1. Configuración del Fondo */
+.body-fondo {
+    margin: 0;
+    padding: 0;
+    height: 100vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    background-image: url('../img/kirby.gif');
+    background-size: cover;       
+    background-position: center;   
+    background-repeat: no-repeat;
+}
+
+/* 2. Estilo del Botón */
+.boton-iniciar {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #27ae60; /* Verde profesional */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.boton-iniciar:hover {
+    background-color: #2ecc71; 
+}
+
+
+.contenedor-inicio {
+    background: rgba(255, 255, 255, 0.8); 
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+th {
+    background-color: #2c3e50;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.btn-editar, .btn-eliminar {
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 0.85rem;
+    margin-right: 5px;
+}
+
+.btn-editar {
+    background-color: #3498db; /* Azul */
+}
+
+.btn-editar:hover { background-color: #2980b9; }
+
+.btn-eliminar {
+    background-color: #e74c3c; /* Rojo */
+}
+
+.btn-eliminar:hover { background-color: #c0392b; }

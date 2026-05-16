@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de movimientos</title>
+</head>
+<body>
+
+    <div th:replace="layouts/plantilla :: header"></div>
+
+    <main>
+
+        <h2>Lista de ultimos movimientos</h2>
+
+        
+        <a th:href="@{/movimientos/entrada}">realizar Entrada</a>
+        <a th:href="@{/movimientos/salida}">realizar salida</a>
+        <br><br>
+
+       
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>producto</th>
+                    <th>Stock Inicial</th>
+                    <th>Acciones</th>
+                    <th>Cantidad</th>
+                    <th>Stock final</th>
+                    <th>Fecha</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="m : ${movimientos}">
+                    <td th:text="${m.id}"></td>
+                    <td th:text="${m.producto.nombre}"></td>
+                    <td th:text="${m.stockInicial}"></td>
+                    <td th:text="${m.tipoMovimiento}"></td>
+                    <td th:text="${m.cantidad}"></td>
+                    <td th:text="${m.stockFinal}"></td>
+                    <td th:text="${m.fecha}"></td>
+                    <td>
+                        <a th:href="@{'/movimientos/eliminar/' + ${m.id}}"
+                           onclick="return confirm('¿Eliminar del historial?')">
+                           Eliminar
+                        </a> |
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </main>
+
+    <div th:replace="layouts/plantilla :: footer"></div>
+
+</body>
+</html>

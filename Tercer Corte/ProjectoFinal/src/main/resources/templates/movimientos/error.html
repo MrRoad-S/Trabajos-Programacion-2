@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Error</title>
+</head>
+
+<body>
+
+    <main>
+        <h2>Error: Stock insuficiente</h2> 
+        <a th:href="@{/movimientos/salida}">Volver</a>
+    </main>
+
+    <div th:replace="layouts/plantilla :: footer"></div>
+
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Todo List</title>
+</head>
+<body>
+
+    <header th:fragment="header">
+        
+        <div>
+           
+            <div>
+                <div>
+                    <span>✓</span>
+                </div>
+                <h1>
+                    Todo List
+                </h1>
+            </div>
+
+            
+            <nav>
+                <a th:href="@{/}">Inicio</a>
+                <a th:href="@{/tareas}">Tareas</a>
+                <a th:href="@{/categorias}">Categorías</a>
+            </nav>
+        </div>
+
+        <div></div>
+    </header>
+
+    <footer th:fragment="footer">
+        
+        <div>
+            Aplicación con Spring Boot
+        </div>
+
+    </footer>
+
+</body>
+</html>

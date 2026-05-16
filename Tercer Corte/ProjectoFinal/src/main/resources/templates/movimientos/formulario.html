@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Entrada</title>
+</head>
+<body>
+
+    <div th:replace="layouts/plantilla :: header"></div>
+
+    <main>
+       
+        <h2 th:text="${movimiento.id} != null ? 'Nueva entrada de stock' : 'Nuevo movimiento'"></h2>
+        <form th:action="@{/movimientos}" th:object="${movimiento}" method="post">
+
+          
+            <input type="hidden" th:field="*{id}">
+
+            <div>
+                <label>Producto:</label>
+                <select th:field="*{producto.id}" required>
+                    <option th:each="p : ${productos}"
+                            th:value="${p.id}"
+                            th:text="${p.nombre}">
+                            
+                    </option>
+                </select>
+            </div>
+            <label>Tipo de movimiento</label>
+            <select th:field="*{tipoMovimiento}">
+                <option th:value="entrada">Entrada</option>
+            </select>
+            <div>
+                
+                <label>Stock que desea :</label>
+                <input type="number" th:field="*{cantidad}" min="1">
+            </div> 
+            
+            <div>
+                <button type="submit">Guardar</button>
+            </div>
+           
+
+        </form>
+
+      
+        <a th:href="@{/movimientos}">Volver a la lista</a>
+
+    </main>
+
+    <div th:replace="layouts/plantilla :: footer"></div>
+
+</body>
+</html>
